@@ -18,16 +18,15 @@ st.set_page_config(
 # Create Session object
 def create_session_object():
     connection_parameters = {
-      “account”: “<account_identifier>”,
-      “user”: “<username>”,
-      “password”: “<password>”,
-      “role”: “<role_name>”,
-      “warehouse”: “<warehouse_name>”,
-      “database”: “<database_name>”,
-      “schema”: “<schema_name>”
+      "account"   : "",
+      "user"      : "",
+      "password"  : "",
+      "role"      : "",
+      "warehouse" : "",
+      "database"  : "KNOEMA_ENVIRONMENT_DATA_ATLAS",
+      "schema"    : "ENVIRONMENT"
     }
     session = Session.builder.configs(connection_parameters).create()
-    print(session.sql('select current_warehouse(), current_database(), current_schema()').collect())
     return session
 
 # Add header and a subheader
